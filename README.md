@@ -5,6 +5,7 @@ This is an experimental Wordpress theme build in JS based on [React](https://fac
 This is not meant to be superior over existing server side rendered WP themes, this is simply an experiment.
 
 ### What I'll be working on in the first steps
+ * create solid build script that creates all necessary files to be simply uploaded to WP as a theme
  * create theme basis, incl. extending WP Rest API for things like menus, widgets, etc
  * create solid redux structure for theme
  * create solid logic for routing considering WP settings (-> redirects from settings)
