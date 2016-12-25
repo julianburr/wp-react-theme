@@ -13,5 +13,5 @@ This is not meant to be superior over existing server side rendered WP themes, t
 ### Long term goals
  * build solid theme that behaves according to contents and settings in WP
  * ensure caching where it makes sense to reduce DB connections and API calls
- * set up in-build SEO components ([JSON-LD](https://developers.google.com/search/docs/guides/intro-structured-data))
+ * set up in-build SEO components ([JSON-LD](https://developers.google.com/search/docs/guides/intro-structured-data), sitemaps, etc.)
  * seperate API extension from theme into its own little plugin, to make the theme independent + make it availabe for others/other react themes
