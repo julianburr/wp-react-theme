@@ -1,0 +1,13 @@
+/*
+Theme Name: React
+Theme URI: https://github.com/julianburr/wp-react-theme/
+Author: the WordPress team
+Author URI: https://github.com/julianburr
+Description: Experimental WordPress theme based on React, Redux, React-Router, ...
+Version: 0.1.0
+License: MIT
+*/
+
+body {
+  font-family: 'Open Sans';
+}
