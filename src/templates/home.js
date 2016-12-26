@@ -7,6 +7,7 @@ import { loadList } from '../actions/list';
 import { connect } from 'react-redux';
 import Sidebar from '../components/sidebar';
 import Menu from '../components/menu';
+import { renderHtml } from '../utils/render';
 
 class Home extends Component {
   componentDidMount () {
@@ -22,17 +23,18 @@ class Home extends Component {
       <div className="App">
         <Seo {...this.props} />
         <h1>Homepage</h1>
-        <Sidebar id='home_right_1' />
+        <p>{['This', 'is a test'].map(c => c)}</p>
+        <Sidebar id='home' />
         <h2>Menu</h2>
         <Menu id={2} />
         <h2>Posts</h2>
         <div>
           {list ? list.map((post, i) => {
             return (
-              <a key={i} onClick={browserHistory.push.bind(null, post.link.replace(settings.baseUrl, ''))}>
+              <div key={i}>
                 <h3>{post.title.rendered}</h3>
-                <div dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
-              </a>
+                {renderHtml(post.content.rendered)}
+              </div>
             );
           }) : <p>I'm loading the list, be patient...</p>}
         </div>

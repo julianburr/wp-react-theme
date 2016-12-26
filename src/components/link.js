@@ -8,16 +8,18 @@ class Link extends Component {
   };
 
   handleClick = event => {
-    event.preventDefault();
     const { settings, href } = this.props;
-    const goTo = href.replace(settings.baseUrl, '');
-    console.log('goTo', goTo)
-    history.push(goTo);
+    if (href.startsWith(settings.baseUrl)) {
+      event.preventDefault();
+      const goTo = href.replace(settings.baseUrl, '');
+      console.log('goTo', goTo)
+      history.push(goTo);
+    }
   }
 
   render () {
-    const { children } = this.props;
-    return <a onClick={this.handleClick}>{children}</a>;
+    const { children, href } = this.props;
+    return <a href={href} onClick={this.handleClick}>{children}</a>;
   }
 }
 

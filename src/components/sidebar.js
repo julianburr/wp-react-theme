@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { renderHtml } from '../utils/render';
 
 class Sidebar extends Component {
   static propTypes = {
@@ -8,13 +9,14 @@ class Sidebar extends Component {
 
   render () {
     const { settings, id } = this.props;
-    console.log('settings', settings)
     if (!settings) {
       return <p>Loading Sidebar...</p>;
     } else if (!settings.sidebars || !settings.sidebars[id]) {
       return <p>Sidebar not found!</p>;
     }
-    return <div dangerouslySetInnerHTML={{__html: settings.sidebars[id].rendered}} />;
+    const elements = renderHtml(settings.sidebars[id].rendered);
+    console.log('elements', elements);
+    return <div>{elements}</div>;
   }
 }
 
