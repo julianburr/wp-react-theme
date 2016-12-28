@@ -12,6 +12,7 @@ This is not meant to be superior over existing server side rendered WP themes, t
  * create react templates and components
 
 ### Long term goals
+ * build a basic react redux router that supports regex to be able to use the WP rewrite rules for routing
  * build solid theme that behaves according to contents and settings in WP
  * ensure caching where it makes sense to reduce DB connections and API calls
  * set up in-build SEO components ([JSON-LD](https://developers.google.com/search/docs/guides/intro-structured-data), sitemaps, etc.)

@@ -17,7 +17,6 @@ export const renderNode = (node, level = 0) => {
       output.push(<Tag key={key}>{renderNode(child, level+1)}</Tag>);
     }
   }
-  console.log('output', output)
   return output;
 }
 

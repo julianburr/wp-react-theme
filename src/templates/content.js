@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import Seo from '../components/seo';
+import Sidebar from '../components/sidebar';
+import Menu from '../components/menu';
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
@@ -27,6 +29,9 @@ class Content extends Component {
         <Seo {...this.props} />
         <h1>Trying to get main content</h1>
         <p>For slug <b>{Content.getSlug(this.props)}</b></p>
+        <Sidebar id='home' />
+        <h2>Menu</h2>
+        <Menu id={2} />
         {content ? <pre>{JSON.stringify(content, null, 4)}</pre> : <p>Loading content...</p>}
       </div>
     );

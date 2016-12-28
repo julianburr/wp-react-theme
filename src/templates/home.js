@@ -5,9 +5,11 @@ import { browserHistory } from 'react-router';
 import Seo from '../components/seo';
 import { loadList } from '../actions/list';
 import { connect } from 'react-redux';
-import Sidebar from '../components/sidebar';
-import Menu from '../components/menu';
 import { renderHtml } from '../utils/render';
+import Link from '../components/link';
+import HomePostList from '../components/home/post-list';
+
+import '../styles/templates/home.css';
 
 class Home extends Component {
   componentDidMount () {
@@ -20,24 +22,8 @@ class Home extends Component {
   render () {
     const { settings, list } = this.props;
     return (
-      <div className="App">
-        <Seo {...this.props} />
-        <h1>Homepage</h1>
-        <p>{['This', 'is a test'].map(c => c)}</p>
-        <Sidebar id='home' />
-        <h2>Menu</h2>
-        <Menu id={2} />
-        <h2>Posts</h2>
-        <div>
-          {list ? list.map((post, i) => {
-            return (
-              <div key={i}>
-                <h3>{post.title.rendered}</h3>
-                {renderHtml(post.content.rendered)}
-              </div>
-            );
-          }) : <p>I'm loading the list, be patient...</p>}
-        </div>
+      <div className="home">
+        {list ? <HomePostList list={list} /> : <p>I'm loading the list, be patient...</p>}
       </div>
     );
   }

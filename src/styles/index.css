@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Anton|Muli:400,400i,700,700i|Playfair+Display:400,400i');
+@import url("https://blokkfont-losgordos.netdna-ssl.com/v2/blokkfont.css");
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: none #fafafa;
+  font-size: 14px;
+  font-family: 'Muli', 'Open Sans', sans-serif;
+  color: #222;
+}
+
+body, div, span, header, footer, main, h1, h2, h3, p, ul, li {
+  box-sizing: border-box;
+  font-size: 100%;
+  line-height: 1.4;
+}
+
+h1 {
+  font-family: 'Bree Serif';
+}
+
+a {
+  color: #cc7a6f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrap-all,
+.wrap-all > .content {
+  width: 100%;
+  float: left;
+}
+
+.wrap-all .inner {
+  box-sizing: content-box;
+  width: 850px;
+  margin: 0 0 0 -425px;
+  padding: 0 0 0 50%;
+}

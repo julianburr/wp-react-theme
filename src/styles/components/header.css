@@ -1,0 +1,32 @@
+.wrap-all .header {
+  float: left;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.wrap-all .header__logo {
+  float: left;
+}
+
+.wrap-all .header__logo h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 200%;
+}
+
+.wrap-all .header__logo h1 .react {
+  color: #61dafb;
+}
+
+.wrap-all .header__navigation {
+  float: right;
+}
+
+.wrap-all .header__navigation__menu {
+  float: left;
+}
+
+.wrap-all .header__navigation__search {
+  float: left;
+}

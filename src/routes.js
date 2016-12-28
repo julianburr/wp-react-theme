@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import Index from './templates';
 import Loading from './templates/loading';
 import Home from './templates/home';
 import SearchResult from './templates/search-result';
 import Content from './templates/content';
 
 import { connect } from 'react-redux';
-import { Router, Route } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 import { history } from './store';
 import { loadSettings } from './actions/settings';
 
@@ -21,7 +22,7 @@ class WPThemeRoutes extends Component {
   getRoutes () {
     const { settings } = this.props;
     // Home route
-    let routes = [{path: '/', component: Home, name: 'home'}];
+    let routes = []; // [{path: '/', component: Home, name: 'home'}];
     settings.routes.lists.forEach((route, i) => {
       // Loop through routes from API
       // These are generated using the WP rewrite rules!
@@ -39,9 +40,12 @@ class WPThemeRoutes extends Component {
     // After settings have been loaded, return the routes
     return settings ? (
       <Router history={history}>
-        {this.getRoutes().map((route, i) => (
-          <Route key={i} path={route.path} component={route.component} />
-        ))}
+        <Route path='/' component={Index}>
+          <IndexRoute component={Home} />
+          {this.getRoutes().map((route, i) => (
+            <Route key={i} path={route.path} component={route.component} />
+          ))}
+        </Route>
       </Router>
     ) : <Loading />;
   }
