@@ -171,24 +171,24 @@ class ReactTheme {
         the_excerpt();
         $excerpt = ob_get_clean();
         // Categories
-        $c = get_categories();
+        $c = get_the_category();
         $categories = array();
         foreach ($c as $category) {
           $categories[] = array(
             'id' => $category->term_id,
             'name' => $category->name,
-            'link' => get_category_link($category->id),
+            'link' => get_category_link($category->term_id),
             // 'originalData' => $category
           );
         }
         // Tags
-        $t = get_tags();
+        $t = get_the_tags();
         $tags = array();
         foreach ($t as $tag) {
           $tags[] = array(
             'id' => $tag->term_id,
             'name' => $tag->name,
-            'link' => get_tag_link($tag->id),
+            'link' => get_tag_link($tag->term_id),
             // 'originalData' => $tag
           );
         }
