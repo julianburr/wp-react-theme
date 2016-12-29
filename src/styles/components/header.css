@@ -9,6 +9,12 @@
   float: left;
 }
 
+.wrap-all .header__logo a,
+.wrap-all .header__logo a:hover {
+  color: #222;
+  text-decoration: none;
+}
+
 .wrap-all .header__logo h1 {
   margin: 0;
   padding: 0;
@@ -25,6 +31,25 @@
 
 .wrap-all .header__navigation__menu {
   float: left;
+  margin: 10px 0 0;
+}
+
+.wrap-all .header__navigation__menu ul,
+.wrap-all .header__navigation__menu ul li {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap-all .header__navigation__menu ul li {
+  margin: 0 5px;
+}
+
+.wrap-all .header__navigation__menu ul li a {
+  padding: 5px;
+  color: #222;
+  font-size: 120%;
 }
 
 .wrap-all .header__navigation__search {

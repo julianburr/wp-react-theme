@@ -157,11 +157,58 @@ class ReactTheme {
       $post = null;
       while($query->have_posts()) {
         $query->the_post();
+        // Get content
+        global $more;
+        $content = '';
+        $excerpt = '';
+        ob_start();
+        $more = 1;
+        the_content();
+        $content = ob_get_clean();
+        // ... and excerpt
+        ob_start();
+        $more = 0;
+        the_excerpt();
+        $excerpt = ob_get_clean();
+        // Categories
+        $c = get_categories();
+        $categories = array();
+        foreach ($c as $category) {
+          $categories[] = array(
+            'id' => $category->term_id,
+            'name' => $category->name,
+            'link' => get_category_link($category->id),
+            // 'originalData' => $category
+          );
+        }
+        // Tags
+        $t = get_tags();
+        $tags = array();
+        foreach ($t as $tag) {
+          $tags[] = array(
+            'id' => $tag->term_id,
+            'name' => $tag->name,
+            'link' => get_tag_link($tag->id),
+            // 'originalData' => $tag
+          );
+        }
+        // Put everything together
         $post = array(
           'id' => get_the_ID(),
           'type' => get_post_type(),
           'slug' => $_GET['slug'],
-          'post' => $query->post
+          'data' => array(
+            'title' => get_the_title(),
+            'date' => get_the_date(),
+            'content' => array(
+              'excerpt' => $excerpt,
+              'rendered' => str_replace($excerpt, '<div class="excerpt">' . $excerpt . '</div>', $content)
+            ),
+            'categories' => $categories,
+            'tags' => $tags,
+            'link' => get_permalink()
+          ),
+          // 'originalData' => $query->post
         );
         break;
       }

@@ -12,10 +12,10 @@ import HomePostList from '../components/home/post-list';
 import '../styles/templates/home.css';
 
 class Home extends Component {
-  componentDidMount () {
-    console.log('check', this.props)
-    if (this.props.loadList) {
-      this.props.loadList();
+  constructor (props) {
+    super(props);
+    if (props.loadList) {
+      props.loadList();
     }
   }
 

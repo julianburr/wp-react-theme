@@ -8,14 +8,13 @@ export default class HomePostListItem extends Component {
     const { post } = this.props;
     return (
       <div className="list__item">
-        <div className="list__item__format">
-          <span className={`list__item__format--${post.format} ${post.sticky ? 'list__item__format--sticky' : ''}`} data-format={post.format} />
+        <div className="list__item__image">
+          <img src="https://placehold.it/200x150" />
         </div>
         <div className="list__item__post">
           <Link href={post.link}>
             <h3>{post.title.rendered}</h3>
           </Link>
-          <pre>{JSON.stringify(post, null, 4)}</pre>
           <PostMeta post={post} />
           <div className="list__item__excerpt">
             {renderHtml(post.excerpt.rendered)}

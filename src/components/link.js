@@ -9,7 +9,7 @@ class Link extends Component {
 
   handleClick = event => {
     const { settings, href } = this.props;
-    if (href.startsWith(settings.baseUrl)) {
+    if (href.startsWith(settings.baseUrl) || !href.startsWith('http')) {
       event.preventDefault();
       const goTo = href.replace(settings.baseUrl, '');
       console.log('goTo', goTo)

@@ -9,12 +9,11 @@ body {
   font-size: 14px;
   font-family: 'Muli', 'Open Sans', sans-serif;
   color: #222;
+  line-height: 1.4;
 }
 
-body, div, span, header, footer, main, h1, h2, h3, p, ul, li {
+body, div, span, header, footer, main, aside, h1, h2, h3, p, ul, li, input, select {
   box-sizing: border-box;
-  font-size: 100%;
-  line-height: 1.4;
 }
 
 h1 {

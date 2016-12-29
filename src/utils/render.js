@@ -14,7 +14,7 @@ export const renderNode = (node, level = 0) => {
       output.push(<Link key={key} href={child.getAttribute('href')}>{renderNode(child, level+1)}</Link>);
     } else {
       const Tag = child.tagName.toLowerCase();
-      output.push(<Tag key={key}>{renderNode(child, level+1)}</Tag>);
+      output.push(<Tag className={child.className} key={key}>{renderNode(child, level+1)}</Tag>);
     }
   }
   return output;

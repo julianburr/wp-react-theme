@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import '../styles/index.css';
 
 export default class Index extends Component {
@@ -12,11 +13,7 @@ export default class Index extends Component {
             {this.props.children}
           </div>
         </div>
-        <div className="footer">
-          <div className="inner">
-            Footer
-          </div>
-        </div>
+        <Footer />
       </div>
     );
   }
