@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import Seo from '../components/seo';
 import Sidebar from '../components/sidebar';
 import Menu from '../components/menu';
+import PostMeta from '../components/post/meta';
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
@@ -31,6 +32,7 @@ class Content extends Component {
         <main className={`content__main content__main--${content ? content.type || 'default' : 'loading'}`}>
           {content ? (
             <div>
+              <PostMeta post={content.data} />
               <h1>{content.data.title}</h1>
               {renderHtml(content.data.content.rendered)}
               <pre>{JSON.stringify(content, null, 4)}</pre>

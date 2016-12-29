@@ -1,5 +1,5 @@
 .post__meta {
-  color: #999;
+  color: #aaa;
   font-weight: 900;
 }
 
@@ -15,6 +15,46 @@
 .post__meta__tags ul li {
   float: left;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 5px;
   padding: 0;
+}
+
+.post__meta__categories ul,
+.post__meta__tags ul {
+  margin-left: 15px;
+}
+
+.post__meta__tags ul li a {
+  margin-top: -2px;
+  padding: 2px 8px 2px 15px;
+  border-radius: 2px;
+  background: none #ccc;
+  color: white;
+  display: inline-block;
+  position: relative;
+}
+
+.post__meta__tags ul li a:hover {
+  background: none #61dafb;
+  text-decoration: none;
+}
+
+.post__meta__tags ul li a:before {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  margin-top: -2px;
+  height: 4px;
+  width: 4px;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+.post__meta__categories ul li a {
+  color: #aaa;
+}
+
+.post__meta__categories ul li a:hover {
+  color: #61dafb;
 }
