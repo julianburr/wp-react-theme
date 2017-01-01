@@ -35,7 +35,6 @@ class Content extends Component {
               <PostMeta post={content.data} />
               <h1>{content.data.title}</h1>
               {renderHtml(content.data.content.rendered)}
-              <pre>{JSON.stringify(content, null, 4)}</pre>
             </div>
           ) : <p>Loading content...</p>}
         </main>

@@ -171,7 +171,7 @@ class ReactTheme {
         the_excerpt();
         $excerpt = ob_get_clean();
         // Categories
-        $c = get_the_category();
+        $c = get_the_category(get_the_ID());
         $categories = array();
         foreach ($c as $category) {
           $categories[] = array(
@@ -182,15 +182,17 @@ class ReactTheme {
           );
         }
         // Tags
-        $t = get_the_tags();
+        $t = get_the_tags(get_the_ID());
         $tags = array();
-        foreach ($t as $tag) {
-          $tags[] = array(
-            'id' => $tag->term_id,
-            'name' => $tag->name,
-            'link' => get_tag_link($tag->term_id),
-            // 'originalData' => $tag
-          );
+        if (is_array($t)) {
+          foreach ($t as $tag) {
+            $tags[] = array(
+              'id' => $tag->term_id,
+              'name' => $tag->name,
+              'link' => get_tag_link($tag->term_id),
+              // 'originalData' => $tag
+            );
+          }
         }
         // Put everything together
         $post = array(

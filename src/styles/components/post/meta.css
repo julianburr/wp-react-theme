@@ -1,6 +1,8 @@
 .post__meta {
   color: #aaa;
   font-weight: 900;
+  width: 100%;
+  float: left;
 }
 
 .post__meta__date,
