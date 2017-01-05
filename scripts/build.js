@@ -148,6 +148,10 @@ function build(previousSizeMap) {
 
     // Turn index.html into index.php
     transformHtmlToPhp();
+
+    // Prepend comment to styles.css
+    // This comment includes the necessary information for WP to display the theme correctly in the theme selection
+    addCommentToStylesFile();
   });
 }
 
@@ -177,5 +181,16 @@ function transformHtmlToPhp () {
   fs.move(paths.appBuild + '/index.html', paths.appBuild + '/index.php', function (err) {
     if (err) return console.log(chalk.red.bold(err));
     console.log(chalk.green('Moved ' + chalk.bold('index.html') + ' to ' + chalk.bold('index.php') + '!'))
+  });
+}
+
+function addCommentToStylesFile () {
+  fs.readFile(paths.appBuild + '/styles.css', (err, data) => {
+    if (err) return console.log(chalk.red.bold(err));
+    data = "/*\nTheme Name: React\nTheme URI: https://github.com/julianburr/wp-react-theme/\nAuthor: the WordPress team\nAuthor URI: https://github.com/julianburr\nDescription: Experimental WordPress theme based on React, Redux, React-Router, ...\nVersion: 0.1.0\nLicense: MIT\n*/\n" + data;
+    fs.writeFile(paths.appBuild + '/styles.css', data, err => {
+      if (err) return console.log(chalk.red.bold(err));
+      console.log(chalk.green('Theme information successfully added to ' + chalk.bold('styles.css') + '!'));
+    });
   });
 }

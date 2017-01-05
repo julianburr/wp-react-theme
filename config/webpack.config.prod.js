@@ -220,7 +220,7 @@ module.exports = {
     // Try to dedupe duplicated modules, if any:
     new webpack.optimize.DedupePlugin(),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin('css/[name].css'), // .[contenthash:8]
+    new ExtractTextPlugin('styles.css'), // .[contenthash:8]
     // Minify the code.
     new webpack.optimize.UglifyJsPlugin({
       compress: {
