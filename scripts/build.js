@@ -185,12 +185,12 @@ function transformHtmlToPhp () {
 }
 
 function addCommentToStylesFile () {
-  fs.readFile(paths.appBuild + '/styles.css', (err, data) => {
+  fs.readFile(paths.appBuild + '/style.css', (err, data) => {
     if (err) return console.log(chalk.red.bold(err));
-    data = "/*\nTheme Name: React\nTheme URI: https://github.com/julianburr/wp-react-theme/\nAuthor: the WordPress team\nAuthor URI: https://github.com/julianburr\nDescription: Experimental WordPress theme based on React, Redux, React-Router, ...\nVersion: 0.1.0\nLicense: MIT\n*/\n" + data;
-    fs.writeFile(paths.appBuild + '/styles.css', data, err => {
+    data = "/*\nTheme Name: React\nTheme URI: https://github.com/julianburr/wp-react-theme/\nAuthor: Julian Burr\nAuthor URI: https://github.com/julianburr\nDescription: Experimental WordPress theme based on React, Redux, React-Router, ...\nVersion: 0.1.0\nLicense: MIT\n*/\n" + data;
+    fs.writeFile(paths.appBuild + '/style.css', data, err => {
       if (err) return console.log(chalk.red.bold(err));
-      console.log(chalk.green('Theme information successfully added to ' + chalk.bold('styles.css') + '!'));
+      console.log(chalk.green('Theme information successfully added to ' + chalk.bold('style.css') + '!'));
     });
   });
 }
