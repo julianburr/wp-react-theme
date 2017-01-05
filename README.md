@@ -9,11 +9,11 @@ This is not meant to be superior over existing server side rendered WP themes, t
    * ~~This should support ES6, SASS, ...~~
  * ~~create theme basis, incl. extending WP Rest API for things like menus, widgets, etc~~
  * create solid redux structure for theme
- * ~~create solid logic for routing considering WP settings (-> redirects from settings)~~
-   * `react router` is quiet limited for this purpose (as different rewrite rules easily end up using the same route path structures, since the router doesn't support RegEx) -> build a basic react redux router that supports regular expressions to be able to use the WP rewrite rules for routing pretty much 1 to 1
+ * ~~create logic for routing considering WP settings (-> redirects from settings)~~
  * ~~create react templates and components~~
 
 ### Long term goals
+ * `react router` is quiet limited for this purpose (as different rewrite rules easily end up using the same route path structures, since the router doesn't support RegEx) -> build a basic react redux router that supports regular expressions to be able to use the WP rewrite rules for routing pretty much 1 to 1
  * build solid theme that behaves according to contents and settings in WP
  * ensure caching where it makes sense to reduce DB connections and API calls
    * also include Webworkers to allow caching contents on the client side (for faster loading times (make sure to consider TTL!) and/or offline availablity)
