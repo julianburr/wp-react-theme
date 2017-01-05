@@ -1,0 +1,19 @@
+{
+  "presets": ["react-app"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "styles": "./src/scss",
+          "js": "./src/js",
+          "templates": "./src/js/templates",
+          "components": "./src/js/components",
+          "actions": "./src/js/actions",
+          "utils": "./src/js/utils",
+          "assets": "./src/assets"
+        }
+      }
+    ]
+  ]
+}

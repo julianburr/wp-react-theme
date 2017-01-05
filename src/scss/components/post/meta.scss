@@ -1,0 +1,68 @@
+@import '../../colors';
+
+.post__meta {
+  color: $color-grey-light;
+  font-weight: 900;
+  width: 100%;
+  float: left;
+
+  .post__meta__date,
+  .post__meta__categories,
+  .post__meta__tags {
+    float: left;
+  }
+
+  .post__meta__categories,
+  .post__meta__tags {
+
+    ul,
+    ul li {
+      float: left;
+      list-style: none;
+      margin: 0 0 0 5px;
+      padding: 0;
+    }
+
+    ul {
+      margin-left: 15px;
+    }
+  }
+
+  .post__meta__tags ul li {
+
+    a {
+      margin-top: -2px;
+      padding: 2px 8px 2px 15px;
+      border-radius: 2px;
+      background: none $color-grey-medium;
+      color: white;
+      display: inline-block;
+      position: relative;
+
+      &:hover {
+        background: none $color-react-blue;
+        text-decoration: none;
+      }
+
+      &:before {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        left: 7px;
+        margin-top: -2px;
+        height: 4px;
+        width: 4px;
+        background: $color-background;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .post__meta__categories ul li a {
+    color: $color-grey-light;
+
+    &:hover {
+      color: $color-react-blue;
+    }
+  }
+}

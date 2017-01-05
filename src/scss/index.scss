@@ -1,0 +1,46 @@
+@import 'colors';
+@import 'fonts';
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: none $color-background;
+  font-size: 14px;
+  font-family: $font-default;
+  color: $color-text;
+  line-height: 1.4;
+}
+
+body, div, span, header, footer, main, aside, h1, h2, h3, p, ul, li, input, select, textarea, button, a {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: $font-heading;
+}
+
+a {
+  color: $color-react-orange;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrap-all {
+
+  &,
+  & > .content {
+    width: 100%;
+    float: left;
+  }
+
+  .inner {
+    box-sizing: content-box;
+    width: 850px;
+    margin: 0 0 0 -425px;
+    padding: 0 0 0 50%;
+  }
+}

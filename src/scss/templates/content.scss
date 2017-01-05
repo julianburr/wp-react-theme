@@ -1,0 +1,28 @@
+@import '../fonts';
+
+.content {
+  width: 100%;
+
+  .content__main {
+    width: 525px;
+    float: left;
+    padding: 30px 0;
+
+    h1 {
+      font-size: 350%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .excerpt {
+      font-family: $font-excerpt;
+      font-size: 150%;
+      padding: 20px 0;
+    }
+  }
+
+  .content__sidebar {
+    width: 250px;
+    float: right;
+  }
+}
