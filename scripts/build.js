@@ -14,7 +14,7 @@ var pathExists = require('path-exists');
 var filesize = require('filesize');
 var gzipSize = require('gzip-size').sync;
 var webpack = require('webpack');
-var config = require('../config/webpack.config.prod');
+var config = require('../config/webpack.config');
 var paths = require('../config/paths');
 var checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 var recursive = require('recursive-readdir');
@@ -138,11 +138,10 @@ function build(previousSizeMap) {
      process.exit(1);
    }
 
-    console.log(chalk.green('Compiled successfully.'));
+    console.log(chalk.green('✓ Compiled successfully.'));
     console.log();
 
     console.log('File sizes after gzip:');
-    console.log();
     printFileSizes(stats, previousSizeMap);
     console.log();
 
@@ -155,6 +154,7 @@ function build(previousSizeMap) {
   });
 }
 
+// The folowing build functionalities are quiet specific to this WP project
 function copyPhpFiles (dir = '') {
   fs.readdir(paths.appPublic + dir, (err, list) => {
     if (err) return console.log(chalk.red.bold(err));
@@ -172,7 +172,7 @@ function copyPhpFiles (dir = '') {
       }
     });
     if (!dir) {
-      console.log(chalk.green('PHP files successfully copied!'));
+      console.log(chalk.green('✓ PHP files successfully copied!'));
     }
   });
 }
@@ -180,7 +180,7 @@ function copyPhpFiles (dir = '') {
 function transformHtmlToPhp () {
   fs.move(paths.appBuild + '/index.html', paths.appBuild + '/index.php', function (err) {
     if (err) return console.log(chalk.red.bold(err));
-    console.log(chalk.green('Moved ' + chalk.bold('index.html') + ' to ' + chalk.bold('index.php') + '!'))
+    console.log(chalk.green('✓ Moved ' + chalk.bold('index.html') + ' to ' + chalk.bold('index.php') + '!'))
   });
 }
 
@@ -190,7 +190,7 @@ function addCommentToStylesFile () {
     data = "/*\nTheme Name: React\nTheme URI: https://github.com/julianburr/wp-react-theme/\nAuthor: Julian Burr\nAuthor URI: https://github.com/julianburr\nDescription: Experimental WordPress theme based on React, Redux, React-Router, ...\nVersion: 0.1.0\nLicense: MIT\n*/\n" + data;
     fs.writeFile(paths.appBuild + '/style.css', data, err => {
       if (err) return console.log(chalk.red.bold(err));
-      console.log(chalk.green('Theme information successfully added to ' + chalk.bold('style.css') + '!'));
+      console.log(chalk.green('✓ Theme information successfully added to ' + chalk.bold('style.css') + '!'));
     });
   });
 }
