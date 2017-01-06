@@ -29,7 +29,7 @@ class Content extends Component {
 
   renderContent () {
     const { content } = this.props;
-    switch (content.type) {
+    switch (content.data.type) {
       case 'post':
         return <ContentPost content={content} />;
       break;
@@ -49,8 +49,8 @@ class Content extends Component {
     const { content } = this.props;
     return (
       <div className="content">
-        <main className={`content__main content__main--${content ? content.type || 'default' : 'loading'}`}>
-          {content ? this.renderContent() : <p>Loading content...</p>}
+        <main className={`content__main content__main--${content.data ? content.data.type || 'default' : 'loading'}`}>
+          {!content.isLoading ? this.renderContent() : <p>Loading content...</p>}
         </main>
         <aside className='content__sidebar'>
           <Sidebar id='home' />

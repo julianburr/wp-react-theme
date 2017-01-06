@@ -6,15 +6,15 @@ import HomePostListItemPrimary from './post-list-item-primary';
 export default class HomePostList extends Component {
   render () {
     const { list } = this.props;
-    return (
+    return list.data.posts ? (
       <div className="list">
-        {list.map((post, i) => {
+        {list.data.posts.map((post, i) => {
           if (i === 0) {
             return <HomePostListItemPrimary post={post} key={i} />
           }
           return <HomePostListItem post={post} key={i} />;
         })}
       </div>
-    );
+    ) : <p>List not found!</p>;
   } 
 }
