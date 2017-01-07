@@ -5,9 +5,14 @@
   .search__button {
     width: 40px;
     height: 40px;
-    background: red;
     border: 0 none;
     font-size: 200%;
+    background: none transparent;
+    cursor: pointer;
+
+    .icon {
+      line-height: 40px !important;
+    }
   }
 
   .search__field {

@@ -30,7 +30,7 @@ export default class Search extends Component {
           <input type="text" placeholder="Search for the unthinkable..." ref={c => this._refs.input = c} onKeyPress={this.handleSearch} />
         </div>
         <button onClick={this.toggleSearch} className="search__button">
-          {isActive ? <span>&times;</span> : <span>S</span>}
+          {isActive ? <span>&times;</span> : <span className='icon icon-search' />}
         </button>
       </div>
     );
