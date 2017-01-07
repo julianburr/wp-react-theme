@@ -16,7 +16,7 @@ export const loadContentSuccess = (response) => {
   }
 }
 
-export const loadContentFilure = (error) => {
+export const loadContentFailure = (error) => {
   return {
     type: LOAD_CONTENT_FAILURE,
     error

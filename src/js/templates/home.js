@@ -23,7 +23,7 @@ class Home extends Component {
     const { settings, list } = this.props;
     return (
       <div className="home">
-        {!list.isLoading ? <HomePostList list={list} /> : <p>I'm loading the list, be patient...</p>}
+        {!list.isLoading ? <HomePostList list={list} /> : <HomePostList loading />}
       </div>
     );
   }

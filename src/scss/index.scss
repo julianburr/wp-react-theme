@@ -1,6 +1,21 @@
 @import 'colors';
 @import 'fonts';
 
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Anton|Muli:400,400i,700,700i|Playfair+Display:400,400i');
+
+@font-face {
+  font-family: 'BLOKK';
+  src: url('../assets/BLOKKNeue-Regular.eot');
+  src: url('../assets/BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../assets/BLOKKNeue-Regular.woff2') format('woff2'),
+       url('../assets/BLOKKNeue-Regular.woff') format('woff'),
+       url('../assets/BLOKKNeue-Regular.otf') format('opentype'),
+       url('../assets/BLOKKNeue-Regular.ttf') format('truetype'),
+       url('../assets/BLOKKNeue-Regular.svg#BLOKKRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -43,4 +58,10 @@ a:hover {
     margin: 0 0 0 -425px;
     padding: 0 0 0 50%;
   }
+}
+
+.loading,
+.loading * {
+  font-family: $font-blokk !important;
+  color: $color-grey-very-light !important;
 }

@@ -27,20 +27,29 @@ class Content extends Component {
     return postname || splat;
   }
 
+  willReceiveProps = (nextProps) => {
+    console.log('will receive props', nextProps)
+  }
+
   renderContent () {
     const { content } = this.props;
+    console.log('content.isLoading', content.isLoading, content.data.type)
     switch (content.data.type) {
       case 'post':
-        return <ContentPost content={content} />;
+        return <ContentPost loading={content.isLoading} content={content} />;
       break;
 
       case 'page':
-        return <ContentPage content={content} />;
+        return <ContentPage loading={content.isLoading} content={content} />;
+      break;
+
+      case 'error':
+        // return <ContentError type={content.errorType || 404} content={content} />;
       break;
 
       default:
-      case 'error':
-        // return <ContentError type={content.errorType || 404} content={content} />;
+        // Loading
+        return <ContentPage loading />;
       break;
     }
   }
@@ -49,8 +58,8 @@ class Content extends Component {
     const { content } = this.props;
     return (
       <div className="content">
-        <main className={`content__main content__main--${content.data ? content.data.type || 'default' : 'loading'}`}>
-          {!content.isLoading ? this.renderContent() : <p>Loading content...</p>}
+        <main className={`content__main`}>
+          {this.renderContent()}
         </main>
         <aside className='content__sidebar'>
           <Sidebar id='home' />
