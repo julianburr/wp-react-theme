@@ -43,9 +43,7 @@ export default (state, action) => {
 
       axios.get(`${config.apiUrl}/wp-json/react-api/v1/content?slug=${action.slug}`)
         .then(response => {
-          setTimeout(_ => {
-            store.dispatch(loadContentSuccess(response));
-          }, 2000);
+          store.dispatch(loadContentSuccess(response));
         })
         .catch(error => {
           store.dispatch(loadContentFailure(error))
